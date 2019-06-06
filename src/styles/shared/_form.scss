@@ -1,0 +1,18 @@
+.form{
+  &-row{
+    width: 100%;
+  }
+
+  &-login, &-projects{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  &-col{
+    &-4{
+      margin: 0 1rem;
+      // width: 25%;
+    }
+  }
+}
+

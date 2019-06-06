@@ -1,0 +1,34 @@
+<form class="form-projects" [formGroup]="infos">
+    <div class="projects-row">
+      <div class="projects-image">
+        <span>Image for banner</span>
+        <i class="material-icons">
+          add_photo_alternate
+        </i>
+      </div>
+      <div class="projects-info">
+        <div class="projects-row">
+          <div class="projects-info-col">
+            <mat-form-field class="form-row">
+              <input matInput placeholder="Project Name" formControlName="name">
+              <mat-error *ngIf="getErrorDisplay()">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="projects-info-col">
+            <mat-form-field class="form-row">
+              <input matInput placeholder="Project Title" formControlName="title">
+              <mat-error *ngIf="getErrorDisplay()">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="projects-row">
+          <mat-form-field class="form-row">
+            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Intodução" formControlName="introduction"></textarea>
+            <mat-error *ngIf="getErrorDisplay()">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+
+        </div>
+      </div>
+    </div>
+
+  </form>

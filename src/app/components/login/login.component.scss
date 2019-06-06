@@ -1,0 +1,28 @@
+@import '../../../styles/shared/form';
+
+:host{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+.card{
+  width: 20rem;
+}
+.title{
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form{
+  &-row{
+   margin-bottom: .7rem;
+
+   &__submit{
+     margin-top: .5rem;
+   }
+  }
+}
+
+

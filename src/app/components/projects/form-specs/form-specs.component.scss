@@ -1,0 +1,30 @@
+:host{
+  width: 100%;
+}
+.specs{
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 1rem;
+  flex-direction: column;
+
+  &-title{
+    width: 100%;
+  }
+
+  &-row{
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  &-col{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    &:first-child{
+      margin-right: 1.5rem;
+    }
+
+  }
+}

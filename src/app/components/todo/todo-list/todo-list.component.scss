@@ -1,0 +1,45 @@
+
+
+.todo{
+  &-list{
+    width: 100%;
+  }
+}
+.mat-form-field{
+  margin: 0 .55rem;
+  // display: flex;
+  &.description, &.responsible{
+    min-width: 30%;
+  }
+  &.priority{
+    width: 15%;
+  }
+}
+
+button{
+  margin: 0 1.5rem;
+}
+
+.isCompleted{
+  text-decoration: line-through;
+}
+
+$green: #65c765;
+$yellow: #f1f144;
+$red: #ff6e6e;
+
+.mat-chip{
+  min-width: 5.6rem;
+  &.low{
+    background-color: $green;
+    color: darken($green, 45);
+  }
+  &.medium{
+    background-color: $yellow;
+    color: darken($yellow, 45);
+  }
+  &.high{
+    background-color: $red;
+    color: darken($red,  45)
+  }
+}

@@ -1,0 +1,26 @@
+:host{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.title{
+  display: flex;
+  flex-direction: column;
+  small{
+    font-size: .8rem;
+  }
+}
+
+.infos{
+  display: flex;
+  flex-direction: column;
+  p{
+    font-size: .6rem;
+    padding: .25rem .75rem;
+    background-color: #cccccc;
+    border-radius: .5rem;
+
+  }
+}

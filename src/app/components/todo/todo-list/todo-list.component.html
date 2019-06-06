@@ -1,0 +1,57 @@
+<h3>Create Todo:</h3>
+<form action="" [formGroup]="todoFormGroup">
+  <mat-form-field class="description">
+    <input matInput placeholder="Description" formControlName="description">
+  </mat-form-field>
+  <mat-form-field class="responsible">
+    <input matInput placeholder="Responsible" formControlName="responsability">
+  </mat-form-field>
+  <mat-form-field class="priority">
+      <mat-label>Priority</mat-label>
+      <select matNativeControl formControlName="priority">
+        <option value="high">high</option>
+        <option value="medium">Medium</option>
+        <option value="low">low</option>
+      </select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Add</button>
+</form>
+<h3>Todo List:</h3>
+<table mat-table [dataSource]="(todos | async)" class="mat-elevation-z8" class="todo-list">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> # </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="{'isCompleted': element.isCompleted}"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> description </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="{'isCompleted': element.isCompleted}"> {{element.description}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="responsability">
+      <th mat-header-cell *matHeaderCellDef> responsability </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="{'isCompleted': element.isCompleted}"> {{element.responsability}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="priority">
+      <th mat-header-cell *matHeaderCellDef> priority </th>
+
+      <td mat-cell *matCellDef="let element" [ngClass]="{'isCompleted': element.isCompleted}">
+          <mat-chip-list aria-label="Fish selection">
+              <mat-chip [ngClass]="{'high': element.priority === 'high', 'medium': element.priority === 'medium', 'low': element.priority === 'low'}" >{{element.priority}}</mat-chip>
+            </mat-chip-list>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)=toggleTodo(row)></tr>
+  </table>
+

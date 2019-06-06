@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <mat-toolbar-row>
+    <!-- <span class="logo"></span> -->
+    <div class="brand">
+      <mat-icon class="icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+      <span>Admin</span>
+    </div>
+    <div class="menu">
+      <button mat-button [routerLink]="['/login']" routerLinkActive="router-link-active" >login</button>
+      <button mat-button [routerLink]="['/projects']" routerLinkActive="router-link-active" >project</button>
+      <button mat-button [routerLink]="['/todo']" routerLinkActive="router-link-active" >todo </button>
+    </div>
+    </mat-toolbar-row>
+</mat-toolbar>

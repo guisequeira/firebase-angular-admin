@@ -1,0 +1,29 @@
+@mixin size($size){
+  width: ($size);
+  height: ($size * 1.2);
+}
+.logo{
+  @include size(1.5rem);
+  margin: 1rem;
+  display: inline-block;
+  background-image: url('/assets/images/logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+.icon{
+  margin: .8rem;
+}
+.mat-toolbar-row{
+  justify-content: space-between;
+  .brand{
+    display: flex;
+    align-items: center;
+  }
+
+  .menu{
+    display: flex;
+
+  }
+}

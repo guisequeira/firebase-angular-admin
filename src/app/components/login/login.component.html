@@ -1,0 +1,19 @@
+<mat-card class="card">
+  <mat-card-title class="title">Login</mat-card-title>
+  <mat-card-content>
+    <form class="form-login" [formGroup]="formLogin" >
+      <mat-form-field class="form-row">
+        <input matInput placeholder="User" formControlName="user">
+        <mat-error *ngIf="getErrorDisplay()">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-row">
+          <input type="password" matInput placeholder="Password" formControlName="password">
+          <mat-error *ngIf="getErrorDisplay()">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <div class="form-row__submit">
+          <button mat-flat-button color="primary" (click)="submit()" [disabled]="getErrorDisplay()">Login</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

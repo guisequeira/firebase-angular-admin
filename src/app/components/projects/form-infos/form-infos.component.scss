@@ -1,0 +1,69 @@
+@import '../../../../styles/shared/form';
+//
+:host{
+  width: 100%;
+
+}
+.card{
+  margin: 5rem 0;
+  width: 70%;
+}
+
+.mat-form-field{
+  margin-bottom: 1rem;
+
+}
+.projects{
+
+  &-submit{
+    margin: 3rem 1rem;
+    display: flex;
+    justify-content: center;
+
+    .mat-raised-button{
+      min-width: 20rem;
+    }
+  }
+
+  &-specs{
+    display: flex;
+  }
+  &-row{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    // align-items: center;
+  }
+
+  &-col{
+    // margin: 0 1rem;
+    // padding: 1rem;
+    width: 100%;
+  }
+
+  &-info{
+    display: flex;
+    width: 80%;
+    padding: 0 .5rem;
+    flex-direction: column;
+    &-col{
+      &:first-child{
+        margin-right:1rem;
+      }
+      width: 50%;
+    }
+  }
+
+  &-image{
+    margin-right: 1rem;
+    width: 20%;
+    height: 10rem;
+    // background-color: beige;
+    border: 1px dashed #cccccc;
+    border-radius: .3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

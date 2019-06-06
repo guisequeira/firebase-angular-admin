@@ -1,0 +1,10 @@
+<h1 class="title">
+  Todo App
+  <small>Using Angular & Redux</small>
+</h1>
+<div class="infos">
+  <p>
+    Last Update: {{ (lastUpdate | async) | date: 'mediumTime' }} | Total items: {{ (todos | async).length}}
+  </p>
+  <button mat-raised-button color="accent" (click)="clearTodos()">Delete all</button>
+</div>

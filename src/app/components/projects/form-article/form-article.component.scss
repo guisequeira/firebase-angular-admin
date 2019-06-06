@@ -1,0 +1,37 @@
+:host{
+  min-width: 50%;
+  padding-right: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.article{
+  &-add{
+    margin: 3rem 0;
+  }
+  &-select{
+    margin-bottom: 2rem;
+    .radio{
+      &:last-child{
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  &-form{
+    .mat-form-field{
+      width: 100%;
+    }
+  }
+
+  &-image{
+    margin-top: 3rem;
+    min-height: 5rem;
+    border: 1px dashed #cccccc;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column
+  }
+}
