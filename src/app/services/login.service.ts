@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable, Subscription } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+import { User } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  public user$: Subscription;
+  public user$: Observable<User>;
 
   constructor(private afAuth: AngularFireAuth) {
-    this.user$ = afAuth.authState.subscribe(user => {
-      console.log('login: ', user);
-    })
+    this.user$ = afAuth.authState;
   }
 
   public loginWithEmail(email, password): void {
