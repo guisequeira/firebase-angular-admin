@@ -9,7 +9,7 @@
       <button mat-button [routerLink]="['/login']" routerLinkActive="router-link-active" >login</button>
       <button mat-button [routerLink]="['/projects']" routerLinkActive="router-link-active" >project</button>
       <button mat-button [routerLink]="['/todo']" routerLinkActive="router-link-active" >todo </button>
-      <button mat-button routerLinkActive="router-link-active" >logout </button>
+      <button mat-button (click)="loginService.logout()" routerLinkActive="router-link-active" >logout </button>
     </div>
     </mat-toolbar-row>
 </mat-toolbar>

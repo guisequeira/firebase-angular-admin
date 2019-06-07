@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Observable, Subscription } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { Observable, Subscription, of } from 'rxjs';
+import { switchMap, map } from 'rxjs/operators';
 import { User } from '../interfaces/user.interface';
 
 @Injectable({
@@ -18,8 +18,12 @@ export class LoginService {
   public loginWithEmail(email, password): void {
     this.afAuth.auth.signInWithEmailAndPassword(email, password).then(credential => {
       console.log('login success', credential);
-    }).catch( error => {
+    }).catch(error => {
       console.log('login error');
-    })
+    });
+  }
+
+  public logout(): void {
+    this.afAuth.auth.signOut();
   }
 }
