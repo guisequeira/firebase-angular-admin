@@ -14,11 +14,7 @@ export class HeaderComponent implements OnInit {
   constructor(public loginService: LoginService) { }
 
   ngOnInit() {
-    this.loginService.user$.subscribe( user => {
-      this.user = user;
-      console.log('user ', this.user);
-    });
-    console.log('user header', this.loginService.user$);
+    this.loginService.user$.subscribe( user => this.user = user );
   }
 
 }
