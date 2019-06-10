@@ -21,9 +21,11 @@ import { TodoOverviewComponent } from './components/todo/todo-overview/todo-over
 import { TodoListComponent } from './components/todo/todo-list/todo-list.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './reducers/food.reducer';
-import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ProjectListComponent } from './components/projects/project-list/project-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     FoodComponent,
     TodoComponent,
     TodoOverviewComponent,
-    TodoListComponent
+    TodoListComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     StoreModule.forRoot(reducer),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

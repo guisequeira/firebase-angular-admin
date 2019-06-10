@@ -1,4 +1,4 @@
-<div class="specs">
+<div class="specs" [formGroup]="specification">
     <div class="specs-title">
       <h3>Specifications</h3>
     </div>
@@ -6,18 +6,18 @@
     <div class="specs-row">
       <div class="specs-col">
         <mat-form-field>
-          <input matInput placeholder="Agency">
+          <input matInput placeholder="Agency" formControlName="agency">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Client">
+          <input matInput placeholder="Client" formControlName="client">
         </mat-form-field>
       </div>
       <div class="specs-col">
         <mat-form-field>
-          <input matInput placeholder="Role">
+          <input matInput placeholder="Role" formControlName="role">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Credit">
+          <input matInput placeholder="Credit" formControlName="credit">
         </mat-form-field>
       </div>
     </div>

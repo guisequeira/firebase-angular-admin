@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { FoodComponent } from './components/food/food.component';
+import { ProjectListComponent } from './components/projects/project-list/project-list.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'projects',
-    component: ProjectsComponent
+    component: ProjectListComponent
   },
   {
     path: 'todo',

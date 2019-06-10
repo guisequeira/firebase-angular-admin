@@ -1,16 +1,16 @@
-<div class="article">
+<div class="article" [formGroup]="article">
   <div class="article-select">
-    <mat-radio-group [(ngModel)]="articleTypeSelect.type">
+    <mat-radio-group [(ngModel)]="articleTypeSelect.type" formControlName="type">
       <mat-radio-button class="radio" value="paragraph">Titulo + paragrafo</mat-radio-button>
       <mat-radio-button class="radio" value="image">Imagem</mat-radio-button>
     </mat-radio-group>
   </div>
   <div class="article-form" *ngIf="articleTypeSelect.type == 'paragraph'">
     <mat-form-field>
-      <input matInput placeholder="Subtitle">
+      <input matInput placeholder="Subtitle" formControlName="subtitle">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Descriprion">
+      <input matInput placeholder="Descriprion" formControlName="description">
     </mat-form-field>
   </div>
   <div class="article-image" *ngIf="articleTypeSelect.type == 'image'">
@@ -20,6 +20,6 @@
     </i>
   </div>
   <div class="article-add">
-      <button mat-stroked-button color="accent">Add</button>
+      <button mat-stroked-button color="accent" (click)="submit()">Add</button>
   </div>
 </div>

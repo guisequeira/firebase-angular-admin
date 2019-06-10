@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-specs',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-specs.component.scss']
 })
 export class FormSpecsComponent implements OnInit {
+
+  @Input() specification: FormGroup;
 
   constructor() { }
 

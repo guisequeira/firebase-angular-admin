@@ -10,7 +10,6 @@ export class FormInfosComponent implements OnInit {
 
   @Input() infos: FormGroup;
 
-
   constructor() { }
 
   ngOnInit() {

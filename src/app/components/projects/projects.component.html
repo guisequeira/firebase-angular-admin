@@ -5,23 +5,30 @@
   </mat-card-header>
   <mat-card-content>
 
+    <div class="projects-list">
+      <ul>
+        <li class="item" *ngFor="let project of projectList ">
+          {{project.infos.name}}
+        </li>
+      </ul>
+    </div>
+
+
     <div class="projects-row">
-      <app-form-infos [infos]="getFormInfos()"></app-form-infos>
+      <app-form-infos [infos]="getForm('infos')"></app-form-infos>
     </div>
 
     <div class="projects-row">
-      <app-form-specs></app-form-specs>
+      <app-form-specs [specification]="getForm('specification')"></app-form-specs>
     </div>
 
     <h3>Articles</h3>
     <div class="projects-row">
-      <app-form-article></app-form-article>
-      <app-article-display></app-article-display>
+      <app-form-article [articles]="getForm('articles')"></app-form-article>
+      <app-article-display [articles]="getArticlesContent()"></app-article-display>
     </div>
-
-
     <div class="projects-submit">
-      <button mat-raised-button color="primary">Save</button>
+      <button mat-raised-button color="primary" (click)="submit()">Save</button>
     </div>
 
   </mat-card-content>

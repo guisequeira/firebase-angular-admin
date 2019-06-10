@@ -1,29 +1,21 @@
 <div class="display">
-  <div class="display__item" (mouseover)="onShowConfig(true)" (mouseleave)="onShowConfig(false)">
+  <div class="display__item" *ngFor="let article of articles">
     <span class="display__item__step"></span>
-    <i class="display__item__step__icon material-icons">text_fields</i>
-    <div class="display__item__label">
-      <h5 class="title">article-display works!</h5>
-      <p class="description">
-        um pequenso teto de soe dasjkd lkasj dlkasjd
-      </p>
-    </div>
-    <div class="display__item__config">
-        <a href="" class="buttons">
-          <i class="material-icons icon">edit</i>
-        </a>
-        <a href="" class="buttons">
-          <i class="material-icons icon">delete</i>
-        </a>
 
-      </div>
-    <!-- <span ></span> -->
-    <small class="display__item__text"></small>
-  </div>
-  <div class="display__item" (mouseover)="onShowConfig(true)" (mouseleave)="onShowConfig(false)">
-    <span class="display__item__step"></span>
-    <i class="display__item__step__icon material-icons">collections</i>
-    <p class=display__item__label>nomde_da_image_dasd.png</p>
+    <!-- icon type -->
+    <i class="display__item__step__icon material-icons" *ngIf="article.type === 'paragraph'">text_fields</i>
+    <i class="display__item__step__icon material-icons" *ngIf="article.type === 'image'">collections</i>
+
+    <!-- image -->
+    <p class=display__item__label *ngIf="article.type === 'image'">{{article.image}}</p>
+
+    <!-- text -->
+    <div class="display__item__label" *ngIf="article.type === 'paragraph'">
+      <h5 class="title">{{article.subtitle}}</h5>
+      <p class="description">{{article.description}}</p>
+    </div>
+
+    <!-- config -->
     <div class="display__item__config">
       <a href="" class="buttons">
         <i class="material-icons icon">edit</i>
@@ -34,4 +26,6 @@
 
     </div>
   </div>
+
+
 </div>

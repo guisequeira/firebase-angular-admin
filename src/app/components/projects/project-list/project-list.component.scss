@@ -1,0 +1,60 @@
+@import '~@angular/material/theming';
+
+:host{
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
+.project{
+  width: 90%;
+
+  .mat-card{
+    // padding: .5rem 0;
+  }
+  &-list{
+    display: flex;
+    flex-direction: column;
+
+    &-item{
+      display: flex;
+      flex-direction: row;
+      // border: 1px solid #ccc;
+      padding: .5rem 1rem;
+      transition: all .55s ease;
+      // background-color: lighten( #cccccc, 10);
+      justify-content: space-between;
+
+      &:hover{
+        @include mat-elevation(1);
+      }
+      &-infos{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .name{
+          font-size: 1rem;
+          margin-right: 2rem;
+        }
+
+        .title, .slug{
+          font-size: .8rem;
+          margin-right: 1.6rem;
+        }
+        // flex-direction: column;
+
+      }
+
+      &-actions{
+        display: flex;
+        align-items: center;
+
+        .buttons{
+          margin-left: 1rem;
+        }
+      }
+
+    }
+  }
+
+}

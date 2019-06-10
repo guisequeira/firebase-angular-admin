@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-form-article',
@@ -7,14 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormArticleComponent implements OnInit {
 
-  public favoriteSeason: string;
-  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
+  @Input() articles: FormArray;
+
+  public article: FormGroup;
 
   public articleTypeSelect = {type: 'paragraph'};
 
   constructor() { }
 
   ngOnInit() {
+    this.article = this.createNewArticleForm();
   }
 
+  private createNewArticleForm(): FormGroup {
+    return  new FormGroup({
+      type: new FormControl(this.articleTypeSelect.type, [Validators.required]),
+      subtitle: new FormControl(''),
+      description: new FormControl(''),
+      image: new FormControl('caminho_da_imagem.png')
+    });
+  }
+
+  public submit() {
+    this.articles.push(this.article);
+    this.article = this.createNewArticleForm();
+
+  }
 }
