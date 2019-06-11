@@ -17,6 +17,7 @@ export class FormInfosComponent implements OnInit {
   }
 
   getErrorDisplay() {
+    console.log('get errror display');
     return this.infos.invalid;
   }
 

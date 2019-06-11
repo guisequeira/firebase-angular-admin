@@ -79,6 +79,6 @@ export class ProjectsComponent implements OnInit {
   public submit(): void {
     const data = this.projectForm.value;
     console.log('submit data: ', data);
-    this.projectService.createNew(data);
+    // this.projectService.createNew(data);
   }
 }

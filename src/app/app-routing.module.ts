@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'projects',
-    component: ProjectListComponent
+    component: ProjectsComponent
   },
   {
     path: 'todo',
