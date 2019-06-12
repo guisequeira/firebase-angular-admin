@@ -21,6 +21,10 @@ const routes: Routes = [
     component: ProjectsComponent
   },
   {
+    path: 'list',
+    component: ProjectListComponent
+  },
+  {
     path: 'todo',
     component: TodoComponent
   },
