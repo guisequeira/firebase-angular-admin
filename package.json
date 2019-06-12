@@ -6,11 +6,11 @@
     "config": "ts-node -F -O '{\"module\": \"commonjs\"}' ./set-env.ts",
     "dev": "npm run config -- --environment=dev && ng serve -c=dev",
     "start": "node server.js",
-    "build": "npm run config -- --environment=prod && ng build",
+    "build": "npm run config -- --environment=prod && ng build --aot --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "npm run build"
   },
   "heroku-postbuild": "ng build --prod",
   "private": true,
