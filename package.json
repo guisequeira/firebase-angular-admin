@@ -32,7 +32,7 @@
     "@types/argv": "0.0.4",
     "@types/yargs": "^13.0.0",
     "core-js": "^2.5.4",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "firebase": "^6.1.0",
     "hammerjs": "^2.0.8",
     "path": "^0.12.7",
